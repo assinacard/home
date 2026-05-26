@@ -255,43 +255,6 @@
     <p>Usamos cookies simples para melhorar sua experiência.</p>
     <button id="acceptCookies">Entendi</button>
   </div>
-
-
-  <div class="checkout-modal" id="checkoutModal" aria-hidden="true">
-    <div class="checkout-modal__overlay" data-close-checkout></div>
-    <div class="checkout-modal__box" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
-      <button class="checkout-modal__close" type="button" data-close-checkout aria-label="Fechar formulário">×</button>
-      <span class="eyebrow">Cadastro rápido AssinaCard</span>
-      <h2 id="checkoutModalTitle">Antes do pagamento, confirme seus dados.</h2>
-      <p class="checkout-modal__text">Preencha com dados válidos. É por esse WhatsApp e e-mail que a equipe AssinaCard entrará em contato para orientar seu acesso.</p>
-
-      <div class="checkout-id-card">
-        <span>ID AssinaCard</span>
-        <strong id="checkoutLeadId">ASC-000000</strong>
-      </div>
-
-      <form class="checkout-form" id="checkoutForm" novalidate>
-        <input type="hidden" id="checkoutPlan" name="plano">
-        <input type="hidden" id="checkoutUrl" name="checkout_url">
-        <input type="hidden" id="assinacardId" name="assinacard_id">
-
-        <label for="fullName">Nome completo</label>
-        <input id="fullName" name="nome_completo" type="text" autocomplete="name" placeholder="Ex.: Ruan Carlos Destro" required>
-
-        <label for="email">E-mail</label>
-        <input id="email" name="email" type="email" autocomplete="email" placeholder="seunome@email.com" required>
-
-        <label for="whatsapp">WhatsApp</label>
-        <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(21) 99999-9999" required>
-
-        <p class="checkout-form__notice">Use um número válido. O suporte e as orientações serão enviados por ele.</p>
-        <p class="checkout-form__error" id="checkoutError" aria-live="polite"></p>
-
-        <button class="btn btn--full" type="submit">Continuar para pagamento</button>
-      </form>
-    </div>
-  </div>
-
   <script src="script.js"></script>
 </body>
 </html>
