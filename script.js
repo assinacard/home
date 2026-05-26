@@ -22,10 +22,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // ========================================================
 // Formulário antes do checkout Mercado Pago
 // ========================================================
-// Para enviar os leads para uma planilha, CRM ou backend, coloque aqui a URL do seu webhook.
-// Exemplo: Google Apps Script, Make, n8n, Zapier, FormSubmit etc.
-// Enquanto estiver vazio, os dados ficam salvos apenas no navegador do cliente e o checkout continua normalmente.
-const LEADS_WEBHOOK_URL = "";
+// Endpoint seguro de backend que grava o lead no Notion antes de liberar o checkout.
+// Em produção, esse endpoint precisa rodar em uma hospedagem com suporte a funções serverless, como Vercel.
+const LEADS_WEBHOOK_URL = "/api/notion-lead";
 
 const checkoutModal = document.getElementById("checkoutModal");
 const checkoutForm = document.getElementById("checkoutForm");
@@ -165,6 +164,8 @@ checkoutForm?.addEventListener("submit", async (event) => {
     checkout_url: paymentUrl,
     origem: "Landing Page AssinaCard",
     criado_em: new Date().toISOString(),
+    page_url: window.location.href,
+    user_agent: navigator.userAgent,
   };
 
   submitButton.disabled = true;
